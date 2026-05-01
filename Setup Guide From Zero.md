@@ -22,7 +22,7 @@ ollama pull llama3.2:3b
 This downloads the AI model (~2GB). Wait for it to complete.
 
 ### Step 3 — Clone and run
-git clone <YOUR_GITHUB_REPO_URL>
+git clone https://github.com/suvarchala11/Secure-AI-Insights-Assistant.git
 cd insights-assistant
 docker compose up --build
 First build takes 3-4 minutes (downloading Python packages).
@@ -43,7 +43,7 @@ ollama serve
 Keep this terminal open.
 
 ### Step 2 — Clone the repository
-git clone <YOUR_GITHUB_REPO_URL>
+git clone https://github.com/suvarchala11/Secure-AI-Insights-Assistant.git
 cd insights-assistant
 
 ### Step 3 — Create Python virtual environment
