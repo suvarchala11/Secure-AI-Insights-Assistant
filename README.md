@@ -142,7 +142,7 @@ insights-assistant/
 ollama pull llama3.2:3b && ollama serve
 
 # Step 2 — Run the full stack
-git clone <repo-url> && cd insights-assistant
+git clone https://github.com/suvarchala11/Secure-AI-Insights-Assistant.git && cd insights-assistant
 docker compose up --build
 
 # Step 3 — Open
@@ -153,7 +153,7 @@ docker compose up --build
 ### Manual
 
 ```bash
-git clone <repo-url> && cd insights-assistant
+git clone https://github.com/suvarchala11/Secure-AI-Insights-Assistant.git && cd insights-assistant
 python3 -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
 python3 generate_data.py
