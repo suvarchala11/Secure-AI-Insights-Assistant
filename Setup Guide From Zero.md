@@ -23,6 +23,7 @@ This downloads the AI model (~2GB). Wait for it to complete.
 
 ### Step 3 — Clone and run
 git clone https://github.com/suvarchala11/Secure-AI-Insights-Assistant.git
+
 cd insights-assistant
 docker compose up --build
 First build takes 3-4 minutes (downloading Python packages).
@@ -44,6 +45,7 @@ Keep this terminal open.
 
 ### Step 2 — Clone the repository
 git clone https://github.com/suvarchala11/Secure-AI-Insights-Assistant.git
+
 cd insights-assistant
 
 ### Step 3 — Create Python virtual environment
