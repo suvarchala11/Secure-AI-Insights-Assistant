@@ -1,0 +1,27 @@
+Audience Behavior Report — 2025
+============================================================
+
+
+AUDIENCE INSIGHTS
+
+Top engaged segment: 25-34 (avg session: 74 minutes)
+Fastest growing segment: 18-24 (+28% YoY)
+Highest churn risk: 55+ on Free tier
+
+Platform breakdown:
+- Mobile: 52% of total views (dominant)
+- Smart TV: 28% (Premium subscribers)
+- Web: 14%
+- Tablet: 6%
+
+City-level engagement leaders (Q1 2025):
+1. Bangalore — avg engagement score 8.4
+2. Hyderabad — avg engagement score 8.1
+3. Mumbai — avg engagement score 7.9
+
+Completion rates by genre:
+- Sci-Fi: 84%
+- Thriller: 79%
+- Drama: 76%
+- Action: 71%
+- Comedy: 48% (lowest — content-audience fit issue suspected)

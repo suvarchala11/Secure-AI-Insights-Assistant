@@ -1,0 +1,80 @@
+version: "3.9"
+
+# ─────────────────────────────────────────────────────────────
+# Secure AI Insights Assistant — Docker Compose
+#
+# TWO MODES depending on your Ollama setup:
+#
+# MODE A (default): Connect to Ollama running on your HOST machine
+#   → ollama serve  (on your machine, outside Docker)
+#   → docker compose up
+#
+# MODE B: Run Ollama INSIDE Docker (GPU recommended)
+#   → Uncomment the 'ollama' service below
+#   → Change OLLAMA_BASE_URL to http://ollama:11434
+# ─────────────────────────────────────────────────────────────
+
+services:
+
+  backend:
+    build: .
+    container_name: insights-backend
+    ports:
+      - "8000:8000"
+    environment:
+      # MODE A: talks to Ollama on your host machine
+      - OLLAMA_BASE_URL=${OLLAMA_BASE_URL:-http://host.docker.internal:11434}
+      - OLLAMA_MODEL=${OLLAMA_MODEL:-llama3.2:3b}
+      - DATA_DIR=/app/data
+      - DOCS_DIR=/app/docs
+    volumes:
+      - ./data:/app/data
+      - ./docs:/app/docs
+    extra_hosts:
+      # Allows container to reach host's localhost (Linux fix)
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+    networks:
+      - insights-net
+
+  frontend:
+    image: nginx:alpine
+    container_name: insights-frontend
+    ports:
+      - "3000:80"
+    volumes:
+      - ./frontend:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - insights-net
+
+  # ── MODE B: Uncomment to run Ollama inside Docker ──────────
+  # WARNING: Slow on CPU. Recommended only with GPU passthrough.
+  #
+  # ollama:
+  #   image: ollama/ollama:latest
+  #   container_name: insights-ollama
+  #   ports:
+  #     - "11434:11434"
+  #   volumes:
+  #     - ollama-models:/root/.ollama
+  #   networks:
+  #     - insights-net
+  #   # GPU passthrough (uncomment if you have NVIDIA GPU):
+  #   # deploy:
+  #   #   resources:
+  #   #     reservations:
+  #   #       devices:
+  #   #         - driver: nvidia
+  #   #           count: 1
+  #   #           capabilities: [gpu]
+
+networks:
+  insights-net:
+    driver: bridge
+
+# volumes:
+#   ollama-models:   # Uncomment for MODE B

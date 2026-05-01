@@ -1,0 +1,501 @@
+viewer_id,age_segment,city,platform,subscription_tier,joined_date
+1,25-34,Bangalore,Tablet,Free,2022-04-07
+2,18-24,Bangalore,Web,Premium,2024-05-14
+3,55+,Delhi,Tablet,Basic,2024-08-16
+4,55+,Chennai,Mobile,Premium,2022-08-23
+5,55+,Chennai,Smart TV,Free,2023-08-25
+6,45-54,Bangalore,Tablet,Free,2023-06-24
+7,55+,Bangalore,Mobile,Premium,2023-09-04
+8,55+,Surat,Web,Free,2024-02-05
+9,25-34,Jaipur,Mobile,Premium,2023-10-26
+10,45-54,Mumbai,Mobile,Basic,2023-09-22
+11,25-34,Mumbai,Web,Premium,2022-06-11
+12,18-24,Ahmedabad,Mobile,Premium,2022-09-15
+13,25-34,Ahmedabad,Web,Basic,2024-05-16
+14,25-34,Jaipur,Web,Premium,2023-10-01
+15,45-54,Kolkata,Tablet,Premium,2024-07-13
+16,18-24,Hyderabad,Web,Free,2023-11-24
+17,18-24,Surat,Web,Premium,2023-03-28
+18,18-24,Delhi,Mobile,Free,2022-05-19
+19,18-24,Kolkata,Mobile,Premium,2023-05-03
+20,35-44,Ahmedabad,Web,Premium,2022-09-28
+21,55+,Surat,Tablet,Free,2024-08-26
+22,45-54,Hyderabad,Mobile,Free,2024-06-01
+23,35-44,Pune,Tablet,Basic,2022-04-21
+24,18-24,Mumbai,Tablet,Premium,2023-11-26
+25,18-24,Hyderabad,Web,Free,2024-07-07
+26,25-34,Pune,Web,Basic,2024-08-05
+27,25-34,Delhi,Tablet,Premium,2022-07-20
+28,18-24,Jaipur,Mobile,Free,2023-04-30
+29,25-34,Pune,Tablet,Basic,2023-03-14
+30,45-54,Mumbai,Web,Basic,2022-01-05
+31,45-54,Chennai,Tablet,Basic,2024-05-16
+32,55+,Ahmedabad,Web,Free,2023-08-31
+33,25-34,Mumbai,Mobile,Premium,2023-10-05
+34,18-24,Mumbai,Tablet,Premium,2022-11-19
+35,18-24,Jaipur,Mobile,Free,2022-05-21
+36,55+,Delhi,Web,Basic,2022-09-03
+37,55+,Hyderabad,Mobile,Premium,2022-06-17
+38,45-54,Surat,Smart TV,Basic,2023-02-23
+39,35-44,Hyderabad,Smart TV,Basic,2022-09-26
+40,35-44,Ahmedabad,Smart TV,Free,2022-01-20
+41,45-54,Surat,Mobile,Free,2023-03-13
+42,55+,Chennai,Web,Basic,2022-05-21
+43,25-34,Kolkata,Smart TV,Free,2024-06-16
+44,55+,Chennai,Mobile,Premium,2023-09-06
+45,18-24,Bangalore,Smart TV,Free,2022-08-08
+46,55+,Bangalore,Smart TV,Basic,2023-03-08
+47,35-44,Hyderabad,Smart TV,Premium,2024-09-27
+48,35-44,Mumbai,Mobile,Premium,2024-05-17
+49,35-44,Mumbai,Mobile,Basic,2022-09-25
+50,35-44,Bangalore,Tablet,Premium,2024-05-25
+51,55+,Mumbai,Mobile,Free,2022-11-02
+52,55+,Mumbai,Smart TV,Premium,2022-10-31
+53,45-54,Bangalore,Mobile,Basic,2024-01-17
+54,18-24,Kolkata,Web,Premium,2023-05-27
+55,18-24,Kolkata,Tablet,Premium,2022-11-13
+56,25-34,Bangalore,Web,Basic,2022-02-20
+57,25-34,Kolkata,Tablet,Premium,2023-05-24
+58,35-44,Bangalore,Mobile,Basic,2022-03-21
+59,45-54,Hyderabad,Web,Basic,2023-12-18
+60,35-44,Hyderabad,Web,Free,2023-01-31
+61,45-54,Kolkata,Smart TV,Free,2023-07-26
+62,35-44,Jaipur,Tablet,Premium,2023-11-10
+63,18-24,Delhi,Smart TV,Free,2023-06-28
+64,18-24,Delhi,Tablet,Basic,2023-10-05
+65,45-54,Surat,Mobile,Basic,2023-01-25
+66,35-44,Mumbai,Tablet,Free,2024-11-30
+67,55+,Hyderabad,Smart TV,Basic,2022-05-24
+68,35-44,Surat,Smart TV,Premium,2022-09-13
+69,35-44,Jaipur,Smart TV,Premium,2024-04-16
+70,35-44,Pune,Smart TV,Premium,2022-09-18
+71,25-34,Pune,Tablet,Premium,2022-12-23
+72,55+,Surat,Smart TV,Basic,2022-01-01
+73,35-44,Chennai,Web,Basic,2023-10-22
+74,45-54,Ahmedabad,Tablet,Premium,2023-03-14
+75,55+,Ahmedabad,Web,Premium,2022-06-23
+76,35-44,Jaipur,Smart TV,Free,2023-04-27
+77,35-44,Hyderabad,Web,Free,2022-02-20
+78,18-24,Hyderabad,Tablet,Premium,2022-05-30
+79,45-54,Pune,Web,Premium,2024-02-26
+80,45-54,Pune,Web,Free,2022-01-12
+81,18-24,Pune,Web,Free,2024-11-26
+82,45-54,Mumbai,Web,Free,2024-07-23
+83,25-34,Ahmedabad,Smart TV,Basic,2024-10-30
+84,45-54,Jaipur,Tablet,Free,2024-08-30
+85,45-54,Chennai,Web,Premium,2023-07-22
+86,55+,Ahmedabad,Web,Basic,2024-06-19
+87,18-24,Chennai,Web,Basic,2023-11-19
+88,35-44,Jaipur,Mobile,Free,2022-11-05
+89,25-34,Pune,Web,Premium,2023-03-15
+90,18-24,Pune,Tablet,Basic,2024-08-12
+91,45-54,Mumbai,Web,Basic,2024-03-08
+92,55+,Mumbai,Tablet,Basic,2022-01-13
+93,35-44,Chennai,Tablet,Basic,2023-03-28
+94,45-54,Hyderabad,Smart TV,Basic,2024-09-21
+95,18-24,Pune,Smart TV,Premium,2024-04-08
+96,25-34,Ahmedabad,Web,Premium,2022-02-25
+97,45-54,Surat,Mobile,Free,2024-05-27
+98,25-34,Ahmedabad,Web,Free,2023-06-17
+99,45-54,Kolkata,Web,Basic,2023-11-01
+100,35-44,Pune,Smart TV,Basic,2023-06-01
+101,18-24,Ahmedabad,Mobile,Premium,2022-04-17
+102,35-44,Hyderabad,Mobile,Premium,2022-03-24
+103,18-24,Hyderabad,Web,Free,2022-11-09
+104,25-34,Bangalore,Tablet,Premium,2022-08-23
+105,55+,Hyderabad,Tablet,Premium,2023-06-09
+106,35-44,Bangalore,Mobile,Free,2023-09-30
+107,18-24,Surat,Mobile,Basic,2024-02-08
+108,45-54,Hyderabad,Mobile,Premium,2023-05-13
+109,18-24,Chennai,Mobile,Premium,2022-03-26
+110,35-44,Jaipur,Tablet,Premium,2024-01-29
+111,18-24,Jaipur,Smart TV,Free,2024-05-10
+112,45-54,Delhi,Tablet,Basic,2024-07-30
+113,25-34,Pune,Web,Premium,2023-07-08
+114,55+,Jaipur,Tablet,Basic,2024-06-11
+115,55+,Chennai,Smart TV,Free,2022-06-27
+116,35-44,Ahmedabad,Web,Basic,2024-02-16
+117,35-44,Mumbai,Tablet,Basic,2023-01-08
+118,45-54,Hyderabad,Smart TV,Basic,2023-11-29
+119,35-44,Surat,Smart TV,Premium,2022-01-21
+120,55+,Hyderabad,Mobile,Free,2024-04-12
+121,45-54,Jaipur,Web,Premium,2024-09-02
+122,45-54,Ahmedabad,Mobile,Free,2023-08-26
+123,25-34,Pune,Web,Basic,2024-01-26
+124,45-54,Jaipur,Smart TV,Basic,2023-11-09
+125,35-44,Ahmedabad,Smart TV,Basic,2023-05-30
+126,25-34,Delhi,Web,Basic,2022-09-02
+127,55+,Bangalore,Web,Free,2024-09-18
+128,35-44,Surat,Smart TV,Free,2023-02-02
+129,35-44,Hyderabad,Smart TV,Free,2023-09-12
+130,18-24,Jaipur,Web,Basic,2022-04-04
+131,18-24,Jaipur,Smart TV,Premium,2022-09-16
+132,45-54,Delhi,Mobile,Premium,2023-08-06
+133,45-54,Ahmedabad,Tablet,Basic,2023-01-13
+134,18-24,Chennai,Tablet,Free,2022-05-14
+135,45-54,Ahmedabad,Mobile,Premium,2022-04-20
+136,25-34,Bangalore,Smart TV,Free,2023-05-24
+137,18-24,Jaipur,Tablet,Premium,2023-04-08
+138,55+,Pune,Tablet,Basic,2023-09-01
+139,55+,Pune,Smart TV,Premium,2022-05-04
+140,55+,Delhi,Web,Premium,2023-03-09
+141,35-44,Delhi,Web,Free,2022-12-22
+142,55+,Delhi,Web,Free,2024-04-16
+143,45-54,Surat,Tablet,Basic,2022-03-08
+144,25-34,Chennai,Smart TV,Premium,2024-07-18
+145,18-24,Hyderabad,Smart TV,Premium,2023-02-10
+146,45-54,Delhi,Web,Premium,2022-11-02
+147,35-44,Bangalore,Mobile,Free,2022-12-06
+148,35-44,Surat,Smart TV,Basic,2022-09-12
+149,45-54,Chennai,Tablet,Basic,2024-10-21
+150,55+,Ahmedabad,Tablet,Free,2022-03-23
+151,45-54,Kolkata,Smart TV,Free,2022-07-07
+152,25-34,Surat,Mobile,Premium,2023-07-06
+153,55+,Mumbai,Web,Basic,2024-11-28
+154,45-54,Chennai,Web,Premium,2024-06-11
+155,45-54,Delhi,Tablet,Basic,2024-04-16
+156,35-44,Kolkata,Mobile,Free,2023-11-07
+157,45-54,Ahmedabad,Smart TV,Premium,2024-03-31
+158,55+,Mumbai,Tablet,Free,2023-10-07
+159,35-44,Kolkata,Mobile,Basic,2024-11-19
+160,18-24,Jaipur,Tablet,Basic,2022-04-22
+161,25-34,Jaipur,Smart TV,Premium,2024-10-17
+162,45-54,Mumbai,Web,Basic,2022-09-26
+163,35-44,Ahmedabad,Tablet,Free,2022-03-01
+164,55+,Hyderabad,Web,Basic,2022-01-29
+165,55+,Pune,Mobile,Free,2022-08-21
+166,45-54,Delhi,Web,Basic,2023-08-21
+167,55+,Chennai,Tablet,Basic,2024-08-25
+168,25-34,Ahmedabad,Web,Basic,2023-01-26
+169,55+,Jaipur,Web,Free,2023-07-20
+170,45-54,Kolkata,Smart TV,Free,2023-08-03
+171,35-44,Surat,Tablet,Free,2024-07-03
+172,55+,Ahmedabad,Smart TV,Basic,2024-02-12
+173,45-54,Kolkata,Web,Premium,2023-05-05
+174,55+,Pune,Web,Basic,2022-03-31
+175,35-44,Ahmedabad,Tablet,Basic,2022-11-08
+176,45-54,Mumbai,Web,Premium,2023-11-11
+177,18-24,Ahmedabad,Mobile,Premium,2024-07-24
+178,18-24,Bangalore,Tablet,Premium,2022-11-13
+179,18-24,Ahmedabad,Smart TV,Basic,2024-03-25
+180,18-24,Kolkata,Tablet,Basic,2024-09-26
+181,55+,Mumbai,Mobile,Free,2023-08-12
+182,25-34,Delhi,Tablet,Free,2022-07-25
+183,45-54,Bangalore,Smart TV,Free,2022-04-05
+184,35-44,Mumbai,Smart TV,Basic,2024-02-07
+185,45-54,Bangalore,Web,Premium,2024-04-23
+186,55+,Bangalore,Web,Free,2022-06-11
+187,55+,Pune,Web,Basic,2022-10-21
+188,25-34,Ahmedabad,Smart TV,Basic,2023-06-07
+189,18-24,Ahmedabad,Smart TV,Premium,2022-11-20
+190,18-24,Ahmedabad,Smart TV,Premium,2023-09-05
+191,45-54,Chennai,Tablet,Basic,2023-02-12
+192,45-54,Ahmedabad,Mobile,Free,2024-02-21
+193,55+,Kolkata,Smart TV,Premium,2023-08-28
+194,18-24,Pune,Smart TV,Free,2022-04-11
+195,55+,Ahmedabad,Smart TV,Free,2023-12-23
+196,25-34,Hyderabad,Smart TV,Premium,2022-10-08
+197,18-24,Mumbai,Smart TV,Basic,2022-03-10
+198,55+,Kolkata,Web,Free,2023-08-28
+199,35-44,Pune,Web,Free,2022-09-28
+200,55+,Kolkata,Smart TV,Free,2023-06-11
+201,45-54,Chennai,Smart TV,Free,2024-08-17
+202,18-24,Bangalore,Web,Premium,2024-03-24
+203,55+,Kolkata,Mobile,Basic,2022-01-29
+204,35-44,Jaipur,Mobile,Basic,2024-01-25
+205,35-44,Surat,Tablet,Premium,2024-01-31
+206,18-24,Hyderabad,Tablet,Free,2023-11-03
+207,55+,Hyderabad,Mobile,Premium,2024-08-08
+208,35-44,Pune,Mobile,Free,2022-04-03
+209,18-24,Chennai,Tablet,Free,2022-07-19
+210,25-34,Jaipur,Web,Basic,2024-07-18
+211,35-44,Jaipur,Tablet,Premium,2022-11-13
+212,45-54,Delhi,Tablet,Premium,2024-04-15
+213,35-44,Mumbai,Smart TV,Free,2024-06-27
+214,45-54,Hyderabad,Smart TV,Free,2024-01-23
+215,55+,Kolkata,Mobile,Basic,2023-07-20
+216,25-34,Delhi,Tablet,Free,2023-03-11
+217,55+,Mumbai,Mobile,Basic,2023-05-14
+218,25-34,Surat,Web,Free,2023-03-01
+219,55+,Hyderabad,Web,Basic,2022-10-30
+220,55+,Mumbai,Smart TV,Free,2022-09-24
+221,55+,Chennai,Web,Free,2022-02-22
+222,25-34,Mumbai,Smart TV,Free,2023-10-26
+223,18-24,Bangalore,Smart TV,Free,2022-09-17
+224,45-54,Jaipur,Mobile,Premium,2022-05-11
+225,45-54,Ahmedabad,Smart TV,Premium,2022-08-12
+226,45-54,Jaipur,Web,Premium,2022-03-30
+227,55+,Chennai,Tablet,Premium,2022-03-05
+228,18-24,Ahmedabad,Tablet,Basic,2022-08-10
+229,45-54,Ahmedabad,Mobile,Free,2023-10-22
+230,55+,Bangalore,Mobile,Free,2023-07-18
+231,55+,Surat,Smart TV,Basic,2023-08-27
+232,45-54,Jaipur,Tablet,Free,2022-08-23
+233,55+,Hyderabad,Tablet,Basic,2023-04-13
+234,45-54,Kolkata,Tablet,Basic,2024-05-01
+235,18-24,Kolkata,Tablet,Basic,2023-06-07
+236,35-44,Bangalore,Tablet,Free,2022-07-06
+237,18-24,Delhi,Tablet,Free,2024-02-03
+238,25-34,Jaipur,Mobile,Premium,2023-11-07
+239,18-24,Pune,Smart TV,Premium,2024-05-16
+240,18-24,Chennai,Smart TV,Basic,2022-08-01
+241,55+,Jaipur,Web,Free,2024-09-14
+242,25-34,Delhi,Smart TV,Premium,2024-01-23
+243,18-24,Chennai,Web,Basic,2022-02-23
+244,55+,Chennai,Mobile,Free,2023-07-14
+245,35-44,Kolkata,Smart TV,Free,2023-01-07
+246,25-34,Surat,Tablet,Free,2022-10-18
+247,18-24,Delhi,Web,Basic,2024-05-09
+248,45-54,Kolkata,Web,Basic,2023-10-01
+249,35-44,Surat,Mobile,Free,2022-11-15
+250,25-34,Surat,Mobile,Premium,2022-06-17
+251,35-44,Ahmedabad,Tablet,Basic,2024-06-24
+252,45-54,Chennai,Web,Premium,2022-08-22
+253,35-44,Pune,Mobile,Basic,2024-09-23
+254,55+,Chennai,Mobile,Free,2024-03-20
+255,55+,Mumbai,Mobile,Free,2023-09-10
+256,25-34,Bangalore,Smart TV,Basic,2023-11-03
+257,18-24,Mumbai,Tablet,Premium,2024-05-31
+258,25-34,Bangalore,Tablet,Premium,2023-04-17
+259,55+,Jaipur,Smart TV,Free,2024-03-24
+260,18-24,Pune,Mobile,Basic,2022-06-09
+261,35-44,Surat,Tablet,Premium,2024-04-08
+262,45-54,Chennai,Mobile,Basic,2022-02-12
+263,35-44,Bangalore,Tablet,Premium,2024-01-12
+264,18-24,Pune,Mobile,Free,2024-06-11
+265,55+,Pune,Mobile,Basic,2023-09-28
+266,35-44,Hyderabad,Smart TV,Free,2022-06-06
+267,55+,Delhi,Web,Basic,2023-12-21
+268,25-34,Hyderabad,Mobile,Free,2023-06-09
+269,25-34,Bangalore,Web,Premium,2022-06-04
+270,25-34,Ahmedabad,Tablet,Premium,2024-07-08
+271,55+,Surat,Smart TV,Premium,2023-10-10
+272,25-34,Ahmedabad,Mobile,Basic,2024-06-24
+273,35-44,Chennai,Mobile,Basic,2024-11-05
+274,18-24,Chennai,Tablet,Basic,2022-03-19
+275,18-24,Kolkata,Smart TV,Free,2022-07-04
+276,55+,Surat,Tablet,Basic,2022-03-26
+277,45-54,Surat,Web,Basic,2024-09-01
+278,55+,Bangalore,Mobile,Basic,2022-07-31
+279,35-44,Delhi,Web,Free,2023-05-23
+280,45-54,Ahmedabad,Web,Basic,2024-02-03
+281,35-44,Pune,Tablet,Basic,2022-04-18
+282,35-44,Delhi,Smart TV,Free,2024-03-02
+283,35-44,Chennai,Web,Basic,2022-06-16
+284,55+,Bangalore,Smart TV,Basic,2024-03-13
+285,25-34,Surat,Mobile,Basic,2024-02-11
+286,35-44,Bangalore,Mobile,Premium,2024-05-17
+287,55+,Kolkata,Mobile,Basic,2023-09-25
+288,25-34,Hyderabad,Smart TV,Basic,2023-01-29
+289,25-34,Bangalore,Web,Free,2023-08-29
+290,18-24,Jaipur,Mobile,Premium,2023-11-21
+291,55+,Bangalore,Tablet,Free,2022-11-29
+292,25-34,Surat,Web,Premium,2024-06-15
+293,18-24,Pune,Smart TV,Premium,2023-05-02
+294,45-54,Surat,Smart TV,Premium,2024-07-08
+295,25-34,Jaipur,Web,Basic,2024-08-18
+296,25-34,Kolkata,Tablet,Basic,2023-08-01
+297,45-54,Jaipur,Tablet,Free,2023-02-13
+298,55+,Bangalore,Smart TV,Free,2024-09-11
+299,35-44,Jaipur,Mobile,Premium,2024-11-22
+300,18-24,Chennai,Mobile,Free,2023-07-13
+301,45-54,Jaipur,Web,Basic,2022-07-07
+302,25-34,Ahmedabad,Smart TV,Free,2024-04-29
+303,18-24,Pune,Smart TV,Free,2024-03-01
+304,18-24,Kolkata,Web,Free,2023-10-15
+305,18-24,Kolkata,Web,Free,2022-03-20
+306,35-44,Ahmedabad,Web,Premium,2024-08-18
+307,45-54,Surat,Mobile,Free,2022-02-08
+308,35-44,Hyderabad,Web,Premium,2024-05-16
+309,18-24,Chennai,Web,Basic,2022-09-07
+310,18-24,Hyderabad,Tablet,Premium,2024-07-25
+311,18-24,Delhi,Tablet,Premium,2022-02-03
+312,55+,Surat,Web,Premium,2022-10-22
+313,35-44,Pune,Mobile,Premium,2023-12-24
+314,25-34,Surat,Tablet,Free,2022-06-25
+315,55+,Kolkata,Mobile,Premium,2024-11-05
+316,55+,Jaipur,Mobile,Basic,2024-08-20
+317,18-24,Pune,Smart TV,Basic,2022-02-03
+318,35-44,Delhi,Smart TV,Free,2022-08-01
+319,55+,Kolkata,Web,Free,2023-12-23
+320,55+,Kolkata,Web,Premium,2024-08-09
+321,45-54,Bangalore,Web,Free,2024-07-26
+322,18-24,Chennai,Web,Free,2023-02-13
+323,18-24,Kolkata,Smart TV,Premium,2024-03-26
+324,55+,Ahmedabad,Smart TV,Free,2023-01-27
+325,35-44,Kolkata,Mobile,Premium,2023-11-11
+326,35-44,Delhi,Smart TV,Basic,2024-03-30
+327,45-54,Pune,Smart TV,Free,2024-10-13
+328,45-54,Kolkata,Smart TV,Free,2024-05-19
+329,18-24,Pune,Web,Premium,2023-08-25
+330,35-44,Delhi,Mobile,Basic,2023-08-29
+331,35-44,Ahmedabad,Tablet,Free,2024-06-28
+332,35-44,Ahmedabad,Mobile,Premium,2023-12-24
+333,55+,Pune,Smart TV,Premium,2022-04-28
+334,18-24,Pune,Smart TV,Premium,2022-11-24
+335,18-24,Bangalore,Tablet,Free,2022-09-16
+336,18-24,Hyderabad,Smart TV,Basic,2024-02-24
+337,55+,Mumbai,Web,Premium,2024-07-10
+338,35-44,Kolkata,Tablet,Free,2022-10-09
+339,55+,Kolkata,Tablet,Basic,2023-07-25
+340,25-34,Delhi,Mobile,Premium,2023-01-17
+341,45-54,Jaipur,Tablet,Premium,2022-08-30
+342,35-44,Chennai,Tablet,Free,2023-08-08
+343,45-54,Hyderabad,Mobile,Free,2022-06-01
+344,45-54,Bangalore,Tablet,Free,2023-10-17
+345,35-44,Delhi,Smart TV,Basic,2022-11-19
+346,25-34,Kolkata,Web,Free,2023-02-16
+347,25-34,Hyderabad,Tablet,Free,2024-01-10
+348,55+,Surat,Smart TV,Basic,2022-09-23
+349,55+,Delhi,Mobile,Basic,2024-03-26
+350,45-54,Jaipur,Tablet,Basic,2022-06-01
+351,25-34,Kolkata,Mobile,Basic,2024-08-12
+352,55+,Kolkata,Web,Premium,2023-01-08
+353,25-34,Pune,Mobile,Free,2024-11-27
+354,25-34,Chennai,Web,Free,2023-10-23
+355,25-34,Kolkata,Smart TV,Free,2023-05-29
+356,25-34,Jaipur,Smart TV,Free,2023-09-13
+357,55+,Jaipur,Mobile,Premium,2022-12-12
+358,55+,Surat,Web,Free,2023-11-23
+359,55+,Mumbai,Mobile,Free,2022-04-04
+360,55+,Chennai,Web,Premium,2024-05-03
+361,55+,Mumbai,Tablet,Premium,2023-08-17
+362,35-44,Ahmedabad,Web,Premium,2024-04-11
+363,35-44,Ahmedabad,Mobile,Premium,2022-05-03
+364,25-34,Ahmedabad,Tablet,Basic,2024-08-09
+365,25-34,Kolkata,Web,Basic,2023-10-16
+366,35-44,Pune,Web,Basic,2024-11-20
+367,55+,Delhi,Smart TV,Free,2024-08-13
+368,18-24,Chennai,Tablet,Free,2022-10-16
+369,18-24,Mumbai,Smart TV,Basic,2024-05-06
+370,25-34,Bangalore,Smart TV,Premium,2023-10-03
+371,25-34,Bangalore,Tablet,Premium,2024-08-14
+372,45-54,Chennai,Tablet,Free,2022-07-04
+373,45-54,Jaipur,Tablet,Free,2023-03-17
+374,55+,Kolkata,Mobile,Free,2023-07-31
+375,45-54,Surat,Tablet,Basic,2022-01-17
+376,18-24,Pune,Web,Basic,2024-01-20
+377,45-54,Kolkata,Mobile,Basic,2022-04-15
+378,55+,Jaipur,Web,Basic,2023-08-15
+379,18-24,Pune,Tablet,Premium,2023-07-27
+380,55+,Surat,Mobile,Free,2022-07-18
+381,45-54,Kolkata,Smart TV,Premium,2024-01-19
+382,25-34,Hyderabad,Tablet,Premium,2022-03-24
+383,18-24,Mumbai,Web,Premium,2023-11-14
+384,45-54,Jaipur,Tablet,Free,2024-11-21
+385,25-34,Kolkata,Smart TV,Free,2024-03-15
+386,55+,Chennai,Smart TV,Premium,2024-11-09
+387,55+,Ahmedabad,Smart TV,Basic,2022-02-04
+388,35-44,Kolkata,Mobile,Basic,2023-09-23
+389,18-24,Surat,Tablet,Basic,2023-04-12
+390,18-24,Surat,Tablet,Free,2024-02-18
+391,25-34,Hyderabad,Mobile,Premium,2022-08-14
+392,25-34,Mumbai,Tablet,Basic,2024-05-07
+393,25-34,Pune,Web,Basic,2024-10-24
+394,55+,Ahmedabad,Mobile,Premium,2022-10-10
+395,55+,Hyderabad,Smart TV,Premium,2024-09-06
+396,55+,Pune,Smart TV,Free,2024-07-30
+397,55+,Kolkata,Smart TV,Premium,2023-06-26
+398,55+,Ahmedabad,Web,Free,2023-07-26
+399,55+,Chennai,Web,Basic,2023-08-15
+400,25-34,Ahmedabad,Smart TV,Basic,2023-12-16
+401,55+,Chennai,Smart TV,Free,2024-02-17
+402,45-54,Kolkata,Web,Basic,2022-03-28
+403,35-44,Delhi,Smart TV,Basic,2023-06-10
+404,45-54,Hyderabad,Web,Premium,2023-07-10
+405,55+,Chennai,Web,Free,2023-05-06
+406,25-34,Mumbai,Web,Premium,2023-04-22
+407,18-24,Delhi,Tablet,Basic,2024-08-25
+408,18-24,Bangalore,Mobile,Premium,2022-11-20
+409,45-54,Ahmedabad,Tablet,Premium,2023-02-13
+410,35-44,Kolkata,Smart TV,Premium,2022-05-02
+411,18-24,Surat,Web,Premium,2022-03-18
+412,25-34,Pune,Web,Free,2024-03-24
+413,45-54,Bangalore,Smart TV,Free,2022-01-19
+414,35-44,Surat,Mobile,Basic,2023-08-06
+415,45-54,Jaipur,Tablet,Free,2024-10-29
+416,45-54,Chennai,Web,Free,2023-11-09
+417,25-34,Ahmedabad,Smart TV,Premium,2023-01-17
+418,18-24,Kolkata,Smart TV,Premium,2023-01-31
+419,25-34,Surat,Tablet,Basic,2024-11-21
+420,35-44,Delhi,Tablet,Premium,2022-07-15
+421,25-34,Bangalore,Tablet,Basic,2023-05-24
+422,18-24,Chennai,Tablet,Free,2024-07-03
+423,35-44,Kolkata,Smart TV,Premium,2022-01-24
+424,35-44,Kolkata,Web,Free,2022-08-31
+425,45-54,Chennai,Web,Basic,2024-10-26
+426,35-44,Delhi,Smart TV,Basic,2023-03-29
+427,25-34,Bangalore,Tablet,Free,2024-07-20
+428,55+,Kolkata,Tablet,Premium,2024-08-22
+429,55+,Hyderabad,Web,Premium,2022-06-17
+430,55+,Ahmedabad,Smart TV,Free,2022-08-18
+431,18-24,Jaipur,Web,Premium,2022-11-03
+432,25-34,Kolkata,Tablet,Free,2023-02-25
+433,55+,Ahmedabad,Mobile,Premium,2024-07-01
+434,18-24,Ahmedabad,Web,Premium,2024-04-30
+435,45-54,Surat,Mobile,Premium,2024-08-04
+436,35-44,Mumbai,Tablet,Basic,2022-01-07
+437,25-34,Surat,Mobile,Free,2024-05-17
+438,35-44,Delhi,Mobile,Free,2024-08-24
+439,18-24,Chennai,Tablet,Free,2022-10-05
+440,45-54,Kolkata,Tablet,Basic,2024-02-13
+441,45-54,Delhi,Web,Premium,2023-12-14
+442,18-24,Bangalore,Tablet,Premium,2022-09-18
+443,25-34,Mumbai,Mobile,Basic,2024-08-06
+444,55+,Pune,Tablet,Free,2023-05-22
+445,45-54,Kolkata,Web,Basic,2023-01-22
+446,18-24,Mumbai,Tablet,Premium,2022-02-02
+447,25-34,Hyderabad,Mobile,Free,2022-03-10
+448,45-54,Surat,Mobile,Free,2022-04-01
+449,45-54,Ahmedabad,Web,Premium,2023-03-21
+450,18-24,Bangalore,Smart TV,Free,2023-10-16
+451,55+,Surat,Smart TV,Free,2023-09-11
+452,25-34,Jaipur,Web,Basic,2023-09-08
+453,35-44,Mumbai,Web,Premium,2024-05-24
+454,55+,Ahmedabad,Mobile,Basic,2024-02-20
+455,55+,Kolkata,Tablet,Basic,2022-11-02
+456,35-44,Pune,Web,Premium,2024-08-27
+457,25-34,Hyderabad,Smart TV,Premium,2022-10-23
+458,45-54,Mumbai,Tablet,Basic,2022-10-02
+459,45-54,Hyderabad,Smart TV,Free,2023-11-08
+460,18-24,Ahmedabad,Smart TV,Free,2023-01-26
+461,18-24,Chennai,Tablet,Premium,2022-03-22
+462,18-24,Hyderabad,Web,Basic,2023-03-04
+463,35-44,Chennai,Mobile,Free,2023-01-25
+464,18-24,Ahmedabad,Web,Premium,2023-02-23
+465,45-54,Hyderabad,Smart TV,Basic,2024-02-19
+466,45-54,Jaipur,Smart TV,Basic,2023-06-20
+467,35-44,Jaipur,Tablet,Basic,2022-07-21
+468,45-54,Kolkata,Web,Basic,2023-10-03
+469,45-54,Mumbai,Web,Premium,2022-10-26
+470,18-24,Chennai,Tablet,Basic,2022-11-09
+471,25-34,Kolkata,Web,Basic,2023-05-19
+472,45-54,Jaipur,Smart TV,Basic,2024-09-27
+473,45-54,Ahmedabad,Web,Premium,2023-12-23
+474,25-34,Bangalore,Tablet,Free,2022-05-01
+475,55+,Mumbai,Mobile,Premium,2022-04-10
+476,18-24,Pune,Web,Premium,2023-04-19
+477,18-24,Bangalore,Mobile,Free,2024-11-01
+478,45-54,Kolkata,Mobile,Premium,2024-09-16
+479,45-54,Mumbai,Mobile,Premium,2024-04-22
+480,18-24,Mumbai,Smart TV,Premium,2023-08-11
+481,18-24,Jaipur,Tablet,Free,2022-08-08
+482,18-24,Jaipur,Web,Free,2023-01-29
+483,55+,Jaipur,Smart TV,Basic,2023-07-02
+484,45-54,Delhi,Smart TV,Basic,2024-07-29
+485,55+,Hyderabad,Web,Basic,2022-06-15
+486,18-24,Delhi,Tablet,Basic,2024-02-12
+487,55+,Ahmedabad,Mobile,Premium,2022-01-20
+488,25-34,Delhi,Tablet,Basic,2023-11-10
+489,55+,Delhi,Mobile,Free,2023-03-09
+490,55+,Ahmedabad,Smart TV,Free,2022-06-02
+491,35-44,Jaipur,Mobile,Free,2023-10-07
+492,18-24,Hyderabad,Web,Premium,2024-03-26
+493,18-24,Chennai,Web,Premium,2023-05-08
+494,55+,Pune,Smart TV,Basic,2022-10-14
+495,18-24,Jaipur,Smart TV,Free,2022-07-20
+496,45-54,Hyderabad,Mobile,Basic,2024-03-23
+497,35-44,Mumbai,Smart TV,Basic,2024-10-01
+498,25-34,Kolkata,Tablet,Basic,2023-01-16
+499,55+,Pune,Mobile,Premium,2023-08-28
+500,25-34,Delhi,Mobile,Basic,2022-11-12

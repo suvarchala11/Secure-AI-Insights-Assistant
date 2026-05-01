@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Insights Assistant</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  :root { --indigo: #1B3A5C; --indigo-light: #2E5F8A; --indigo-pale: #E8F0F7; }
+
+  body { background: #f0f4f8; font-family: 'Segoe UI', sans-serif; }
+
+  .brand-bg   { background-color: var(--indigo); }
+  .brand-btn  { background-color: var(--indigo); }
+  .brand-btn:hover { background-color: var(--indigo-light); }
+  .brand-tag  { background-color: var(--indigo-pale); color: var(--indigo); }
+  .brand-border { border-color: var(--indigo); }
+
+  /* Chat bubbles */
+  .bubble-user { background: var(--indigo); color: #fff; border-radius: 18px 18px 4px 18px; }
+  .bubble-ai   { background: #fff; color: #1a202c; border-radius: 18px 18px 18px 4px;
+                 border: 1px solid #e2e8f0; }
+
+  /* Typing dots */
+  .dot { width:8px; height:8px; border-radius:50%; background:var(--indigo);
+         animation: bounce 1.2s infinite; display:inline-block; }
+  .dot:nth-child(2){ animation-delay:.2s; }
+  .dot:nth-child(3){ animation-delay:.4s; }
+  @keyframes bounce {
+    0%,80%,100%{ transform:translateY(0); opacity:.4; }
+    40%{ transform:translateY(-6px); opacity:1; }
+  }
+
+  /* Tool trace */
+  .trace-chip { font-size:11px; padding:2px 8px; border-radius:999px;
+                background:#f1f5f9; color:#475569; border:1px solid #cbd5e1; }
+
+  #chat-box { scroll-behavior: smooth; }
+</style>
+</head>
+<body class="min-h-screen">
+
+<!-- ═══ HEADER ═══════════════════════════════════════════════════════════════ -->
+<header class="brand-bg text-white shadow-lg">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-9 rounded-lg bg-white/20 flex items-center justify-center text-lg">🎬</div>
+      <div>
+        <h1 class="text-lg font-bold leading-none">Insights Assistant</h1>
+        <p class="text-xs text-blue-200 mt-0.5">Secure · Multi-Source · Local AI</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-2 text-xs text-blue-200">
+      <span id="status-dot" class="w-2 h-2 rounded-full bg-yellow-400 inline-block"></span>
+      <span id="status-text">Connecting…</span>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ MAIN LAYOUT ══════════════════════════════════════════════════════════ -->
+<main class="max-w-7xl mx-auto px-4 py-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+  <!-- LEFT: Chat Panel (2/3 width) -->
+  <section class="lg:col-span-2 flex flex-col gap-4">
+
+    <!-- Suggested questions -->
+    <div class="bg-white rounded-2xl shadow-sm p-4 border border-slate-100">
+      <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-3">Try asking…</p>
+      <div class="flex flex-wrap gap-2" id="suggestions">
+        <button onclick="ask('Which titles performed best in 2025?')"
+          class="text-xs brand-tag px-3 py-1.5 rounded-full hover:opacity-80 transition cursor-pointer">
+          🏆 Best titles 2025
+        </button>
+        <button onclick="ask('Why is Stellar Run trending recently?')"
+          class="text-xs brand-tag px-3 py-1.5 rounded-full hover:opacity-80 transition cursor-pointer">
+          📈 Why is Stellar Run trending?
+        </button>
+        <button onclick="ask('Compare Dark Orbit vs Last Kingdom')"
+          class="text-xs brand-tag px-3 py-1.5 rounded-full hover:opacity-80 transition cursor-pointer">
+          ⚖️ Dark Orbit vs Last Kingdom
+        </button>
+        <button onclick="ask('Which city had strongest engagement last month?')"
+          class="text-xs brand-tag px-3 py-1.5 rounded-full hover:opacity-80 transition cursor-pointer">
+          🏙️ Top city engagement
+        </button>
+        <button onclick="ask('What explains weak comedy performance?')"
+          class="text-xs brand-tag px-3 py-1.5 rounded-full hover:opacity-80 transition cursor-pointer">
+          😬 Comedy underperformance
+        </button>
+        <button onclick="ask('What recommendations would you give for leadership next quarter?')"
+          class="text-xs brand-tag px-3 py-1.5 rounded-full hover:opacity-80 transition cursor-pointer">
+          🎯 Leadership recommendations
+        </button>
+      </div>
+    </div>
+
+    <!-- Chat messages -->
+    <div class="bg-white rounded-2xl shadow-sm border border-slate-100 flex flex-col"
+         style="height:460px;">
+      <div id="chat-box" class="flex-1 overflow-y-auto p-5 space-y-4">
+        <!-- Welcome message -->
+        <div class="flex gap-3 items-start">
+          <div class="w-8 h-8 rounded-full brand-bg flex items-center justify-center text-white text-sm flex-shrink-0">AI</div>
+          <div class="bubble-ai px-4 py-3 max-w-lg text-sm shadow-sm">
+            Hello! I'm your secure internal analytics assistant. I can answer questions
+            about titles, genres, audience segments, city engagement, and strategic
+            recommendations — all powered by local AI with zero data leaving your network.
+          </div>
+        </div>
+      </div>
+
+      <!-- Input bar -->
+      <div class="border-t border-slate-100 p-4 flex gap-3">
+        <input id="q-input" type="text"
+          placeholder="Ask a business question…"
+          class="flex-1 text-sm border border-slate-200 rounded-xl px-4 py-2.5
+                 focus:outline-none focus:ring-2 focus:border-transparent"
+          style="--tw-ring-color: var(--indigo)"
+          onkeydown="if(event.key==='Enter') sendQuestion()"
+        />
+        <button onclick="sendQuestion()"
+          class="brand-btn text-white text-sm font-medium px-5 py-2.5
+                 rounded-xl transition-colors flex items-center gap-2">
+          <span>Ask</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Query history / Tool trace -->
+    <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-4">
+      <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-3">
+        🔍 Tool Trace — last query
+      </p>
+      <div id="tool-trace" class="flex flex-wrap gap-2">
+        <span class="trace-chip">No query yet</span>
+      </div>
+      <p id="duration-label" class="text-xs text-slate-400 mt-2"></p>
+    </div>
+  </section>
+
+  <!-- RIGHT: Insights Panel (1/3 width) -->
+  <aside class="flex flex-col gap-4">
+
+    <!-- Chart type selector -->
+    <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-4">
+      <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-3">
+        📊 Visual Summary
+      </p>
+      <select id="chart-select" onchange="loadChart()"
+        class="w-full text-sm border border-slate-200 rounded-lg px-3 py-2
+               focus:outline-none focus:ring-2 mb-4"
+        style="--tw-ring-color: var(--indigo)">
+        <option value="genre_views">Views by Genre</option>
+        <option value="top_titles">Top Titles by Views</option>
+        <option value="city_engagement">City Engagement Scores</option>
+      </select>
+      <div style="position:relative; height:260px;">
+        <canvas id="main-chart"></canvas>
+      </div>
+    </div>
+
+    <!-- Stats cards -->
+    <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-4">
+      <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-3">
+        ⚡ Quick Stats
+      </p>
+      <div class="space-y-3" id="stats-panel">
+        <div class="animate-pulse h-4 bg-slate-100 rounded w-3/4"></div>
+        <div class="animate-pulse h-4 bg-slate-100 rounded w-1/2"></div>
+        <div class="animate-pulse h-4 bg-slate-100 rounded w-2/3"></div>
+      </div>
+    </div>
+
+    <!-- Security badge -->
+    <div class="rounded-2xl p-4 border border-blue-100"
+         style="background:var(--indigo-pale)">
+      <p class="text-xs font-semibold mb-2" style="color:var(--indigo)">🔒 Privacy Guarantee</p>
+      <ul class="text-xs space-y-1" style="color:var(--indigo-light)">
+        <li>✓ LLM runs 100% locally via Ollama</li>
+        <li>✓ No data sent to external APIs</li>
+        <li>✓ Tool-gated data access only</li>
+        <li>✓ PII never exposed to model</li>
+      </ul>
+    </div>
+
+  </aside>
+</main>
+
+<!-- ═══ JAVASCRIPT ════════════════════════════════════════════════════════════ -->
+<script>
+const API = window.location.hostname === 'localhost' && window.location.port === '' ? '/api' : 'http://localhost:8000/api';
+let chartInstance = null;
+
+// ── Health check on load ──────────────────────────────────────────────────────
+async function checkHealth() {
+  try {
+    const r = await fetch("http://localhost:8000/health");
+    if (r.ok) {
+      document.getElementById("status-dot").className =
+        "w-2 h-2 rounded-full bg-green-400 inline-block";
+      document.getElementById("status-text").textContent = "Backend ready";
+      loadChart();
+      loadStats();
+    }
+  } catch {
+    document.getElementById("status-dot").className =
+      "w-2 h-2 rounded-full bg-red-400 inline-block";
+    document.getElementById("status-text").textContent = "Backend offline";
+  }
+}
+
+// ── Chat logic ────────────────────────────────────────────────────────────────
+function ask(question) {
+  document.getElementById("q-input").value = question;
+  sendQuestion();
+}
+
+async function sendQuestion() {
+  const input = document.getElementById("q-input");
+  const question = input.value.trim();
+  if (!question) return;
+
+  input.value = "";
+  appendMessage("user", question);
+  const typingId = appendTyping();
+
+  try {
+    const res = await fetch(`${API}/chat`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ question }),
+    });
+
+    if (!res.ok) throw new Error(`Server error: ${res.status}`);
+    const data = await res.json();
+
+    removeTyping(typingId);
+    appendMessage("ai", data.answer, data.sources_used);
+    updateTrace(data.sources_used, data.duration_seconds);
+
+  } catch (err) {
+    removeTyping(typingId);
+    appendMessage("ai",
+      `⚠️ Error: ${err.message}. Make sure the backend is running on port 8000.`
+    );
+  }
+}
+
+function appendMessage(role, text, sources = []) {
+  const box = document.getElementById("chat-box");
+  const wrap = document.createElement("div");
+  wrap.className = "flex gap-3 items-start " + (role === "user" ? "justify-end" : "");
+
+  const avatar = document.createElement("div");
+  avatar.className = "w-8 h-8 rounded-full flex items-center justify-center text-sm flex-shrink-0 " +
+    (role === "user" ? "bg-slate-200 text-slate-600 order-2" : "brand-bg text-white");
+  avatar.textContent = role === "user" ? "You" : "AI";
+
+  const bubble = document.createElement("div");
+  bubble.className = (role === "user" ? "bubble-user" : "bubble-ai") +
+    " px-4 py-3 max-w-lg text-sm shadow-sm";
+
+  // Format newlines
+  bubble.innerHTML = text.replace(/\n/g, "<br>");
+
+  // Source tags under AI messages
+  if (role === "ai" && sources.length) {
+    const tagRow = document.createElement("div");
+    tagRow.className = "flex flex-wrap gap-1 mt-2";
+    sources.forEach(s => {
+      const tag = document.createElement("span");
+      tag.className = "trace-chip";
+      tag.textContent = "🔧 " + s;
+      tagRow.appendChild(tag);
+    });
+    bubble.appendChild(tagRow);
+  }
+
+  wrap.appendChild(avatar);
+  wrap.appendChild(bubble);
+  box.appendChild(wrap);
+  box.scrollTop = box.scrollHeight;
+}
+
+function appendTyping() {
+  const box = document.getElementById("chat-box");
+  const id = "typing-" + Date.now();
+  const wrap = document.createElement("div");
+  wrap.id = id;
+  wrap.className = "flex gap-3 items-start";
+  wrap.innerHTML = `
+    <div class="w-8 h-8 rounded-full brand-bg flex items-center justify-center text-white text-sm flex-shrink-0">AI</div>
+    <div class="bubble-ai px-4 py-3 shadow-sm flex gap-1 items-center">
+      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="text-xs text-slate-400 ml-2">Thinking (CPU mode — ~20s)</span>
+    </div>`;
+  box.appendChild(wrap);
+  box.scrollTop = box.scrollHeight;
+  return id;
+}
+
+function removeTyping(id) {
+  document.getElementById(id)?.remove();
+}
+
+function updateTrace(sources, duration) {
+  const trace = document.getElementById("tool-trace");
+  trace.innerHTML = sources.length
+    ? sources.map(s => `<span class="trace-chip">🔧 ${s}</span>`).join("")
+    : `<span class="trace-chip">No tools called</span>`;
+  document.getElementById("duration-label").textContent =
+    `⏱ Completed in ${duration}s`;
+}
+
+// ── Chart ─────────────────────────────────────────────────────────────────────
+async function loadChart() {
+  const chartType = document.getElementById("chart-select").value;
+  try {
+    const res = await fetch(`${API}/chart-data?chart_type=${chartType}`);
+    const data = await res.json();
+
+    const ctx = document.getElementById("main-chart").getContext("2d");
+    if (chartInstance) chartInstance.destroy();
+
+    const INDIGO = "#1B3A5C";
+    const COLORS = [
+      "#1B3A5C","#2E5F8A","#3A7CB5","#5B9BD5",
+      "#7FB3E0","#A8CDE8","#C8DFF1","#E8F0F7"
+    ];
+
+    const isBar = chartType === "top_titles";
+
+    chartInstance = new Chart(ctx, {
+      type: isBar ? "bar" : "doughnut",
+      data: {
+        labels: data.labels,
+        datasets: [{
+          data: data.values,
+          backgroundColor: isBar ? INDIGO : COLORS,
+          borderColor: "#fff",
+          borderWidth: 2,
+          borderRadius: isBar ? 6 : 0,
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: !isBar,
+            position: "bottom",
+            labels: { font: { size: 11 }, padding: 10 }
+          },
+          title: {
+            display: true,
+            text: data.title,
+            font: { size: 13, weight: "600" },
+            color: INDIGO,
+            padding: { bottom: 12 }
+          }
+        },
+        scales: isBar ? {
+          y: { beginAtZero: true, grid: { color: "#f1f5f9" } },
+          x: { grid: { display: false },
+               ticks: { font: { size: 10 }, maxRotation: 30 } }
+        } : {}
+      }
+    });
+  } catch (e) {
+    console.error("Chart load failed:", e);
+  }
+}
+
+// ── Quick Stats ───────────────────────────────────────────────────────────────
+async function loadStats() {
+  try {
+    const [genre, titles] = await Promise.all([
+      fetch(`${API}/chart-data?chart_type=genre_views`).then(r => r.json()),
+      fetch(`${API}/chart-data?chart_type=top_titles`).then(r => r.json()),
+    ]);
+
+    const totalViews = genre.values.reduce((a, b) => a + b, 0);
+    const topTitle = titles.labels[0];
+    const topViews = titles.values[0];
+    const topGenreIdx = genre.values.indexOf(Math.max(...genre.values));
+    const topGenre = genre.labels[topGenreIdx];
+
+    document.getElementById("stats-panel").innerHTML = `
+      <div class="flex justify-between text-sm">
+        <span class="text-slate-500">Total Views</span>
+        <span class="font-semibold" style="color:var(--indigo)">${totalViews.toLocaleString()}</span>
+      </div>
+      <div class="flex justify-between text-sm">
+        <span class="text-slate-500">Top Title</span>
+        <span class="font-semibold" style="color:var(--indigo)">${topTitle}</span>
+      </div>
+      <div class="flex justify-between text-sm">
+        <span class="text-slate-500">Top Title Views</span>
+        <span class="font-semibold" style="color:var(--indigo)">${topViews.toLocaleString()}</span>
+      </div>
+      <div class="flex justify-between text-sm">
+        <span class="text-slate-500">Leading Genre</span>
+        <span class="font-semibold" style="color:var(--indigo)">${topGenre}</span>
+      </div>
+    `;
+  } catch (e) {
+    console.error("Stats load failed:", e);
+  }
+}
+
+// ── Boot ──────────────────────────────────────────────────────────────────────
+checkHealth();
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+movie_id,title,genre,release_date,budget_usd,runtime_minutes,language,rating
+1,Stellar Run,Sci-Fi,2024-06-13,19456905,116,English,6.1
+2,Dark Orbit,Sci-Fi,2024-07-15,40627281,139,English,5.6
+3,Last Kingdom,Drama,2025-02-14,41400793,88,Telugu,6.4
+4,Neon Drift,Sci-Fi,2024-09-21,31145908,160,Hindi,9.0
+5,Shadow Protocol,Action,2025-01-03,23833825,120,English,3.8
+6,Echo Chamber,Thriller,2024-07-18,26496489,97,Hindi,6.0
+7,Iron Fable,Drama,2024-06-23,49971471,143,Telugu,6.0
+8,Crimson Tide,Thriller,2024-10-29,43187302,131,Telugu,3.7
+9,The Hollow,Drama,2024-09-25,20420497,95,English,6.0
+10,Bright Horizons,Action,2025-01-19,43660060,131,English,7.1
+11,Comedy Chaos,Comedy,2024-07-07,41878089,106,Telugu,5.6
+12,Laugh Track,Comedy,2024-10-17,43949656,156,English,5.4
+13,Funny Business,Comedy,2024-11-09,27921713,119,English,3.7
+14,Jest Mode,Comedy,2025-02-11,27550407,143,English,3.9
+15,Roast Masters,Comedy,2024-10-13,40230901,139,Telugu,4.4

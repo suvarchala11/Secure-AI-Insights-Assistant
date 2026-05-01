@@ -1,0 +1,25 @@
+Data & Content Policy Guidelines
+============================================================
+
+
+DATA PRIVACY POLICY
+
+All viewer data is pseudonymized at ingestion.
+PII (names, emails, payment info) is stored in isolated secure vaults
+and is NOT accessible through the analytics assistant.
+
+The AI assistant has read-only access to:
+- Aggregated viewing statistics
+- Genre and title performance metrics
+- Regional engagement scores
+- Marketing spend summaries
+
+The AI assistant does NOT have access to:
+- Individual viewer identities
+- Payment or billing information
+- Raw behavioral logs with PII
+
+ACCESS CONTROL:
+- All data queries pass through validated tool functions
+- No direct database access is exposed to the LLM
+- Query results are filtered before being passed to the model
