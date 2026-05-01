@@ -28,37 +28,7 @@ It does this by combining **three data sources** through a
 **tool-gated architecture** — the AI model never touches raw data directly.
 
 ---
-
-
-## Architecture Overview
-┌─────────────────────────────────────────────────────────────┐
-│                        FRONTEND                             │
-│         Single-file HTML + Tailwind + Chart.js              │
-│   Chat UI │ Suggested Qs │ Tool Trace │ Visual Summary      │
-└─────────────────────┬───────────────────────────────────────┘
-│ HTTP POST /api/chat
-│ HTTP GET  /api/chart-data
-┌─────────────────────▼───────────────────────────────────────┐
-│                     FASTAPI BACKEND                         │
-│                                                             │
-│  ┌─────────────────────────────────────────────────────┐   │
-│  │              Smart Tool Router (Python)             │   │
-│  │   Deterministic keyword routing — no LLM guessing  │   │
-│  └───┬─────────────┬──────────────┬────────────────────┘   │
-│      │             │              │                         │
-│  ┌───▼───┐    ┌────▼────┐   ┌────▼─────┐                  │
-│  │  SQL  │    │  DOC    │   │  CHART   │                  │
-│  │ Tools │    │ Tools   │   │  Tools   │                  │
-│  │Pandas │    │ FAISS   │   │ Pandas   │                  │
-│  └───┬───┘    └────┬────┘   └────┬─────┘                  │
-│      │             │              │                         │
-│  ┌───▼─────────────▼──────────────▼─────────────────────┐  │
-│  │              LLM Synthesis Layer                      │  │
-│  │     Ollama (llama3.2:3b) — runs 100% locally         │  │
-│  │     Receives only tool output summaries              │  │
-│  │     Never sees raw PII or full datasets              │  │
-│  └───────────────────────────────────────────────────────┘  │
-└─────────────────────────────────────────────────────────────┘
+```bash
 DATA SOURCES
 ├── data/movies.csv
 ├── data/viewers.csv
@@ -68,6 +38,7 @@ DATA SOURCES
 ├── data/regional_performance.csv
 └── docs/*.txt  (quarterly report, campaign summary,
 audience behavior, roadmap, policy)
+```
 
 ---
 
@@ -135,7 +106,7 @@ in any schema. `get_audience_segments()` returns group-level
 aggregates exclusively — `viewer_id` is never selected.
 
 ---
-
+```bash
 ## Project Structure
 insights-assistant/
 ├── backend/
@@ -158,6 +129,7 @@ insights-assistant/
 ├── requirements.txt
 ├── SETUP.md                 # Detailed recruiter setup guide
 └── .env
+```
 
 ---
 
